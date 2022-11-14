@@ -8,10 +8,6 @@ const ROUTER_USERNAME_UI = '#login-username'
 const ROUTER_SESSION_LOGIN = 'router-session-loggedin'
 const ROUTER_SESSION_USERNAME = 'router-session-username'
 const ROUTER_SESSION_PASSWORD = 'router-session-password'
-const ROUTER_SESSION_ROLES = 'router-session-roles'
-
-const ROUTER_SESSION_LAST_LOGIN = 'router-session-lastLogin'
-const ROUTER_SESSION_LAST_LOGOUT = 'router-session-lastLogout'
 
 let routes = {};
 let templates = {};
@@ -23,19 +19,15 @@ function resetUserSession() {
   sessionStorage.removeItem(ROUTER_SESSION_LOGIN);
   sessionStorage.removeItem(ROUTER_SESSION_USERNAME);
   sessionStorage.removeItem(ROUTER_SESSION_PASSWORD);
-  sessionStorage.removeItem(ROUTER_SESSION_ROLES);
-  sessionStorage.setItem(ROUTER_SESSION_LAST_LOGOUT, new Date());
 }
 
 /**
  * Creates user data from a login in the session storage.
  */
- function createUserSession(username, password, roles) {
+ function createUserSession(username, password) {
   sessionStorage.setItem(ROUTER_SESSION_LOGIN, true)
   sessionStorage.setItem(ROUTER_SESSION_USERNAME, username)
   sessionStorage.setItem(ROUTER_SESSION_PASSWORD, password)
-  sessionStorage.setItem(ROUTER_SESSION_ROLES, roles)
-  sessionStorage.setItem(ROUTER_SESSION_LAST_LOGIN, new Date())
 }
 
 /**
