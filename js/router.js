@@ -95,9 +95,7 @@ function getUser() {
     return {
       username: sessionStorage.getItem(ROUTER_SESSION_USERNAME),
       password: sessionStorage.getItem(ROUTER_SESSION_PASSWORD),
-      roles: sessionStorage.getItem(ROUTER_SESSION_ROLES),
-      lastLogin: sessionStorage.getItem(ROUTER_SESSION_LAST_LOGIN),
-      lastLogout: sessionStorage.getItem(ROUTER_SESSION_LAST_LOGOUT)
+      roles: sessionStorage.getItem(ROUTER_SESSION_ROLES)
     }
   }
 }
